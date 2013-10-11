@@ -1,0 +1,9 @@
+How to get "tasm" and "tlink"?
+You can download from http://www.phatcode.net/downloads.php?id=280
+You need to perform installation in a DOS-like environment, e.g., FreeDOS, DOSBox, first.
+Then copy the following files:
+dpmi16bi.ovl  rtm.exe  tasm.exe  tlink.exe
+
+How to get "exe2bin"?
+You can download from http://www.freedos.org/software/?prog=exe2bin
+exe2b15x.zip/bin/exe2bin.com is the file to copy.
