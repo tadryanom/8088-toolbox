@@ -5,7 +5,7 @@ all: $(TARGET).bin
 
 $(TARGET).bin: $(TARGET).exe
 	@ cp $< tmp.exe
-	>/dev/null dosbox -c "mount c ." -c "c:" -c "del $@" -c "c:\tools\exe2bin tmp.exe tmp.bin >exe2bin.log" -c "exit"
+	>/dev/null dosbox -c "mount c ." -c "c:" -c "c:\tools\exe2bin tmp.exe tmp.bin >exe2bin.log" -c "exit"
 	@ python scripts/fix_case.py
 	@ cat exe2bin.log
 	@ rm -f tmp.exe *.log
@@ -13,7 +13,7 @@ $(TARGET).bin: $(TARGET).exe
 
 $(TARGET).exe: $(TARGET).obj
 	@ cp $< tmp.obj
-	>/dev/null dosbox -c "mount c ." -c "c:" -c "del $@" -c "c:\tools\tlink tmp.obj, tmp.exe >tlink.log" -c "exit"
+	>/dev/null dosbox -c "mount c ." -c "c:" -c "c:\tools\tlink tmp.obj, tmp.exe >tlink.log" -c "exit"
 	@ python scripts/fix_case.py
 	@ cat tlink.log
 	@ rm -f tmp.obj *.log
