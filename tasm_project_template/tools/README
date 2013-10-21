@@ -7,3 +7,5 @@ dpmi16bi.ovl  rtm.exe  tasm.exe  tlink.exe
 How to get "exe2bin"?
 You can download from http://www.freedos.org/software/?prog=exe2bin
 exe2b15x.zip/bin/exe2bin.com is the file to copy.
+
+scripts/download_tools.py automates the download and extract process.
