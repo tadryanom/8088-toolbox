@@ -24,7 +24,7 @@ with zipfile.ZipFile('tasm5.zip', 'r') as myzip:
 	myzip.extract('DISK1/CMDLINE.PAK', 'tmp')
 	myzip.extract('DISK3/CMD16.PAK', 'tmp')
 
-subprocess.call('>/dev/null dosbox -c "mount c ./tmp" -c "c:" -c "disk1\\unpak x disk1\\cmdline.pak" -c "disk1\unpak x disk3\\cmd16.pak" -c "exit"', shell=True)
+subprocess.call('dosbox -c "mount c ./tmp" -c "c:" -c "disk1\\unpak x disk1\\cmdline.pak" -c "disk1\unpak x disk3\\cmd16.pak" -c "exit"', shell=True)
 
 shutil.copyfile('tmp/TASM.EXE', '../tools/tasm.exe')
 shutil.copyfile('tmp/TLINK.EXE', '../tools/tlink.exe')
