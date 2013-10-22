@@ -41,6 +41,7 @@ TLINK (Turbo Linker, DOS) is currently used, when a linker is needed.
 Text Editor
 -----------
 
+[Geany](http://www.geany.org/) (Linux, Windows),
 [Sublime Text](http://www.sublimetext.com/) and
 [TextMate](http://macromates.com/) (Mac) are excellent choices.
 [Gedit](http://projects.gnome.org/gedit/index.html) is also acceptable.
