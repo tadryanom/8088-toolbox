@@ -24,12 +24,14 @@ $(TARGET).exe: $(TARGET).obj
 
 $(TARGET).obj: $(TARGET).asm
 	@ cp $< tmp.asm
-	>/dev/null dosbox -c "mount c ." -c "c:" -c "tools\tasm tmp.asm, tmp.obj >tasm.log" -c "exit"
+	>/dev/null dosbox -c "mount c ." -c "c:" -c "tools\tasm tmp.asm, tmp.obj, tmp.lst >tasm.log" -c "exit"
 	@ python scripts/fix_case.py
 	@ cat tasm.log
 	@ rm -f tmp.asm *.log
+	@ perl -pi -e 's/\r\n|\n|\r/\n/g' tmp.lst
+	@ mv tmp.lst $(TARGET).lst 2>/dev/null
 	@ mv tmp.obj $@ 2>/dev/null
 
 .PHONY: clean
 clean:
-	rm -f *.bin *.exe *.map *.obj
+	rm -f *.bin *.exe *.lst *.map $(TARGET).obj
